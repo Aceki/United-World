@@ -1,0 +1,10 @@
+C:\Users\aceki\Desktop\Projects\United-World\UnitedWorld\obj\Debug\UnitedWorld.csprojAssemblyReference.cache
+C:\Users\aceki\Desktop\Projects\United-World\UnitedWorld\obj\Debug\UnitedWorld.Properties.Resources.resources
+C:\Users\aceki\Desktop\Projects\United-World\UnitedWorld\obj\Debug\UnitedWorld.csproj.GenerateResource.cache
+C:\Users\aceki\Desktop\Projects\United-World\UnitedWorld\obj\Debug\UnitedWorld.csproj.CoreCompileInputs.cache
+C:\Users\aceki\Desktop\Projects\United-World\UnitedWorld\bin\Debug\UnitedWorld.exe.config
+C:\Users\aceki\Desktop\Projects\United-World\UnitedWorld\bin\Debug\UnitedWorld.exe
+C:\Users\aceki\Desktop\Projects\United-World\UnitedWorld\bin\Debug\UnitedWorld.pdb
+C:\Users\aceki\Desktop\Projects\United-World\UnitedWorld\obj\Debug\UnitedWorld.MyForm.resources
+C:\Users\aceki\Desktop\Projects\United-World\UnitedWorld\obj\Debug\UnitedWorld.exe
+C:\Users\aceki\Desktop\Projects\United-World\UnitedWorld\obj\Debug\UnitedWorld.pdb
