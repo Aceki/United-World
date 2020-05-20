@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace UnitedWorld
 {
-    class Mark : PictureBox
+    public class Mark : PictureBox
     {
         public MarkData Data { get; private set; }
 
@@ -18,7 +18,7 @@ namespace UnitedWorld
             Data = data;
             Image = image;
             SizeMode = PictureBoxSizeMode.StretchImage;
-            Size = new Size(10, 10);
+            Size = new Size(30, 30);
         }
     }
 }

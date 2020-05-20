@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Security.Authentication;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,17 +25,30 @@ namespace UnitedWorld
             drawer = new ModelDrawer(model);
             this.DoubleBuffered = true;
 
-            model.Map.MouseWheel += drawer.ZoomMap;
-            for (var i = 0.0d; i <= 1; i += 0.05)
+            model.Map.MouseClick += (sender, args) =>
             {
-                var markData = new MarkData()
+                switch(args.Button)
                 {
-                    Name = $"test{i}",
-                    WidthPart = i,
-                    HeightPart = i,
-                };
-                model.Map.AddMark(new Mark(markData, Resources.error));
-            }
+                    case MouseButtons.Right:
+                        {
+                            var position = this.PointToClient(Cursor.Position);
+                            var markMenu = new AddMarkMenu();
+                            markMenu.Location = Cursor.Position;
+                            markMenu.Show();
+                            Mark mark = null;
+                            markMenu.FormClosing += (s, a) =>
+                            {
+                                mark = markMenu.GetMark();
+                                var v = new Point(position.X - model.Map.Location.X, position.Y - model.Map.Location.Y);
+                                mark.Data.WidthPart = (double)v.X / model.Map.Width;
+                                mark.Data.HeightPart = (double)v.Y / model.Map.Height;
+                                model.Map.AddMark(mark);
+                            };
+                        };
+                        break;
+                }
+            };
+            model.Map.MouseWheel += drawer.ZoomMap;
         }
     }
 }

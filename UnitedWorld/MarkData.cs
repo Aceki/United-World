@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UnitedWorld
 {
-    class MarkData
+    public class MarkData
     {
         public string Name { get; set; }
         public string Description { get; set; }
