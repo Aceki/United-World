@@ -8,22 +8,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UnitedWorld.Properties;
 
 namespace UnitedWorld
 {
     public partial class MyForm : Form
     {
+        private Model model;
+        private ModelDrawer drawer;
+
         public MyForm()
         {
             InitializeComponent();
+            model = new Model(map);
+            drawer = new ModelDrawer(model);
             this.DoubleBuffered = true;
-            mapBox.MouseWheel += (sender, args) =>
+
+            model.Map.MouseWheel += drawer.ZoomMap;
+            for (var i = 0.0d; i <= 1; i += 0.05)
             {
-                var position = new Point(args.X + mapBox.Location.X, args.Y + mapBox.Location.Y);
-                var zoomRatio = (args.Delta < 0 ? 0.95 : 1.05);
-                mapBox.Size = new Size((int)(mapBox.Bounds.Width * zoomRatio), (int)(mapBox.Height * zoomRatio));
-                mapBox.Location = new Point((int)((mapBox.Bounds.X - position.X) * zoomRatio + position.X), (int)((mapBox.Bounds.Y - position.Y) * zoomRatio + position.Y));
-            };
+                var markData = new MarkData()
+                {
+                    Name = $"test{i}",
+                    WidthPart = i,
+                    HeightPart = i,
+                };
+                model.Map.AddMark(new Mark(markData, Resources.error));
+            }
         }
     }
 }

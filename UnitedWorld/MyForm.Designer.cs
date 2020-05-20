@@ -32,38 +32,39 @@ namespace UnitedWorld
         /// </summary>
         private void InitializeComponent()
         {
-            this.mapBox = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.mapBox)).BeginInit();
+            this.map = new Map(global::UnitedWorld.Properties.Resources.map);
+            ((System.ComponentModel.ISupportInitialize)(this.map)).BeginInit();
             this.SuspendLayout();
             // 
             // mapBox
             // 
-            this.mapBox.Image = global::UnitedWorld.Properties.Resources.map;
-            this.mapBox.Location = new System.Drawing.Point(0, 0);
-            this.mapBox.Name = "mapBox";
-            this.mapBox.Size = new System.Drawing.Size(1280, 720);
-            this.mapBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.mapBox.TabIndex = 0;
-            this.mapBox.TabStop = false;
+            this.map.Image = global::UnitedWorld.Properties.Resources.map;
+            this.map.Location = new System.Drawing.Point(0, 0);
+            this.map.Name = "mapBox";
+            this.map.Size = new System.Drawing.Size(1280, 720);
+            this.map.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.map.TabIndex = 0;
+            this.map.TabStop = false;
             // 
             // MyForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1280, 720);
-            this.Controls.Add(this.mapBox);
+            this.Controls.Add(map);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MyForm";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.mapBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.map)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox mapBox;
+        //private System.Windows.Forms.PictureBox map;
+        private Map map;
     }
 }
 

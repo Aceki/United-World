@@ -61,6 +61,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Map.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Mark.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MarkData.cs" />
+    <Compile Include="ModelDrawer.cs" />
     <Compile Include="MyForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +118,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
